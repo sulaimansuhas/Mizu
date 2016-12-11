@@ -1,0 +1,8 @@
+a=prompt("Please enter you weight in kgs");
+b=prompt("Enter the average daily amount of exercise in minutes")
+a=a*2.2
+watera=a*0.6
+waterb=(b/30)*12
+water=(watera+waterb)*28
+console.log(water)
+

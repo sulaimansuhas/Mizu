@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="Mizu.css">
+	</head>
+	<body bgcolor="#008080">
+		<img id="logo"src="mizulogo.png">
+		<p id="weightrequest">Please enter your weight in kgs</p>
+		<form>
+  			<input type="text" name="weight" placeholder="hey">
+		</form>
+		<p id="exerciserequest">Please enter your daily amount fo exrcise in minutes</p>
+		<form>
+  			<input type="text" name="exercise" placeholder="hey" onkeyup="formChanged()" onchange="formChanged()">
+		</form>
+		<button class="button" style="vertical-align:middle" onclick="calc()"><span>Discover</span></button>
+		<p id="water"></p>
+		<p id="glass"></p>
+		<p id="cup"></p>
+		<p id="amnt"></p>
+		<script type="text/javascript">
+			function calc(){
+			var a = document.getElementsByName("weight")[0].value;
+			var b = document.getElementsByName("exercise")[0].value;
+			a=a*2.2;
+			watera=a*0.6;
+			waterb=(b/30)*12;
+			water=Math.round((watera+waterb)*29);
+			glass=Math.ceil(water/250);
+			cups=Math.ceil(glass/16);
+			document.getElementById("water").innerHTML = "You should be drinking "+water+"ml"+" of water a day";
+			document.getElementById("glass").innerHTML = "Thats about "+glass+" 250ml glasses of water a day";
+			document.getElementById("cup").innerHTML = "So you would have to drink "+cups+" an hour";
+			window.scrollBy(0,950);
+
+
+		 }
+		</script>
+	</body>	
+</html>
